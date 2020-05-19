@@ -1,3 +1,6 @@
+<?php
+        $edad=45;
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,8 +10,12 @@
 </head>
 <body>
     <?php
-        $edad=45;
-        echo $edad;
+        $edad=45.7;
+        var_dump($edad);
     ?>
+    <br>
+    <?=$edad;?>
+    <br>
+    <?php echo $edad;?>
 </body>
 </html>
