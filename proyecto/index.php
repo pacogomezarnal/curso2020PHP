@@ -72,9 +72,13 @@ $carta[]=$plato2;
             //titulo, comensales
             if($clave==="ingredientes"){
                 //Me tengo que parar en el array de ingredientes
-                foreach($ingredientes as $ingrediente){
+                foreach($valor as $ingrediente){
                     //Recorro todos los ingredientes
                     //nombre, cantidad
+                    echo "<div>";
+                    echo $plato["titulo"]." ";
+                    var_dump($ingrediente);
+                    echo "</div>";
                 }
             }else{
                 //Muestra un elemento
