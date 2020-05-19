@@ -1,19 +1,20 @@
+<?php
+    $control=true;
+?>
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <ul>
     <?php
-        for ($i = 1; $i <= 10; $i++) {
+    while ($control) {
     ?>
-            <li><?=$i?></li>
+        <div>Paco no es egocentrico</div>
     <?php
-        }
-    ?>  
-    </ul>  
+    }
+    ?>
 </body>
 </html>
