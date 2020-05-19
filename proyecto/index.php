@@ -1,4 +1,26 @@
 <?php
+//A lo bruto
+/*
+$platos=[
+    0=>[
+        "titulo"=>"Ensalada tomate",
+        "numero"=>4,
+        "tipo"=>"entrante",
+        "ingredientes"=>[
+                "nombre"=>"lechuga",
+                "cantidad"=>"100gr"
+                        ],[
+                "nombre"=>"tomate",
+                "cantidad"=>4                            
+                        ]
+        
+    ],
+    1=>[
+
+    ]
+]
+
+*/
 //Definicion de ingredientes
 $ingredientes1=[
     "nombre"=>"lechuga",
@@ -13,7 +35,6 @@ $ingredientes3=[
     "cantidad"=>"500gr"
 ];
 //Definicion de los platos
-$platos=[];
 $plato1=[
     "titulo"=>"Ensalada tomate",
     "numero"=>4,
@@ -29,8 +50,9 @@ $plato2=[
 ];
 $plato2["ingredientes"][]=$ingredientes3;
 //Añado los platos
-$platos[]=$plato1;
-$platos[]=$plato2;
+$carta=[];
+$carta[]=$plato1;
+$carta[]=$plato2;
 
 ?>
 <!DOCTYPE html>
@@ -42,10 +64,20 @@ $platos[]=$plato2;
 </head>
 <body>
     <?php
-    foreach($platos as $plato){
+    foreach($carta as $plato){
+        //Recorre todos los platos
+        //Plato 1, Plato 2, ...
         foreach($plato as $clave => $valor){
+            //Recorre todos los elementos de 1 plato
+            //titulo, comensales
             if($clave==="ingredientes"){
+                //Me tengo que parar en el array de ingredientes
                 foreach($ingredientes as $ingrediente){
+                    //Recorro todos los ingredientes
+                    //nombre, cantidad
+                }
+            }else{
+                //Muestra un elemento
             }
         }
     }
