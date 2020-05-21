@@ -16,7 +16,10 @@
                 echo "error";
             }else{
                 foreach($resultado as $fila){
+                    $resultadoEspecialidad = $conector->query("SELECT * FROM especialidad WHERE id=".$fila["id_especialidad"]);
+                    $filaEspecialidad=$resultadoEspecialidad->fetch_assoc();
                     echo "<h1>titulo: ".$fila["titulo"]."</h1>";
+                    echo "<p>".$filaEspecialidad["nombre"]."</p>";
                 }
             }
         }
