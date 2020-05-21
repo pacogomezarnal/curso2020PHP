@@ -1,6 +1,7 @@
 <?php
 require_once "cursos_db.php";
-conexion();
+$conector=conexion();
+$cursos=getCursosConEspecialidad($conector);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,19 +11,21 @@ conexion();
     <title>Document</title>
 </head>
 <body>
-    <table>
+    <table border=1>
         <tr>
             <td>Titulo</td>
             <td>especialidad</td>
         </tr>
+        <?php
+            foreach($cursos as $curso){
+                ?>
         <tr>
-            <td>Primero</td>
-            <td>1</td>
+            <td><?=$curso["titulo"]?></td>
+            <td><?=$curso["nombre"]?></td>
         </tr>
-        <tr>
-            <td>Segundo</td>
-            <td>2</td>
-        </tr>
+                <?php
+            }
+        ?>
     </table>
 </body>
 </html>
