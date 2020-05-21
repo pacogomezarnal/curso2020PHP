@@ -1,3 +1,7 @@
+<?php
+require_once "cursos_db.php";
+conexion();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,35 +10,19 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        $conector = new mysqli("localhost", "root", "", "cursos");
-        if ($conector->connect_errno) {
-            echo "Fallo al conectar a MySQL: (" . $conector->connect_errno . ") " . $conector->connect_error;
-        }else{
-            $resultado = $conector->query("SELECT * FROM curso");
-            if(!$resultado){
-                echo "error";
-            }else{
-                foreach($resultado as $fila){
-                    $resultadoEspecialidad = $conector->query("SELECT * FROM especialidad WHERE id=".$fila["id_especialidad"]);
-                    $filaEspecialidad=$resultadoEspecialidad->fetch_assoc();
-                    echo "<h1>titulo: ".$fila["titulo"]."</h1>";
-                    echo "<p>".$filaEspecialidad["nombre"]."</p>";
-                }
-            }
-            echo "<br>---------------------";
-            //Segunda forma
-            $resultado = $conector->query("SELECT curso.titulo, especialidad.nombre 
-                                            FROM curso INNER JOIN 
-                                            especialidad ON curso.id_especialidad = especialidad.id;");
-            if(!$resultado){
-                echo "error";
-            }else{
-                foreach($resultado as $fila){
-                    print_r($fila);
-                }
-            }           
-        }
-    ?>
+    <table>
+        <tr>
+            <td>Titulo</td>
+            <td>especialidad</td>
+        </tr>
+        <tr>
+            <td>Primero</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Segundo</td>
+            <td>2</td>
+        </tr>
+    </table>
 </body>
 </html>
