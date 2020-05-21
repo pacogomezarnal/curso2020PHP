@@ -22,6 +22,18 @@
                     echo "<p>".$filaEspecialidad["nombre"]."</p>";
                 }
             }
+            echo "<br>---------------------";
+            //Segunda forma
+            $resultado = $conector->query("SELECT curso.titulo, especialidad.nombre 
+                                            FROM curso INNER JOIN 
+                                            especialidad ON curso.id_especialidad = especialidad.id;");
+            if(!$resultado){
+                echo "error";
+            }else{
+                foreach($resultado as $fila){
+                    print_r($fila);
+                }
+            }           
         }
     ?>
 </body>
