@@ -13,6 +13,16 @@
     <title>Proyecto ejemplo</title>
 </head>
 <body>
+    <h1>Listado de cursos</h1>
+    <ul>
+    <?php
+        foreach ($cursos as $curso){
+            ?>
+                <li><?=$curso["titulo"]?></li>
+            <?php
+        } 
+    ?>
+    </ul>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
