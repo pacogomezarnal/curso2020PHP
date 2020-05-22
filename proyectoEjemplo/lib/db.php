@@ -4,6 +4,12 @@ function conexion(){
         return $conector;
 }
 /*
+Funcion que devuelve un mysqli_result con todos los cursos
+Si existe error devuelve FALSE
+*/
+function getCursos($conector){
+}
+/*
 Funcion que devuelve un mysqli_result con titulo de curso y nombre de especialidad
 Si existe error devuelve FALSE
 */
