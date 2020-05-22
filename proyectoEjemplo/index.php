@@ -17,6 +17,11 @@
     <div class="container">
         <h1>Listado de cursos</h1>
         <div class="row">
+            <div class="col s1 m1">
+                <a href="nuevoCurso.php" class="waves-effect waves-light btn">Nuevo Curso</a>
+            </div>
+        </div>
+        <div class="row">
             <?php
                 foreach ($cursos as $curso){
                     ?>
