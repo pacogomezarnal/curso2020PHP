@@ -8,7 +8,13 @@
 </head>
 <body>
     <?php
-    echo "Hola ".$_GET["nombre"];
+        $conector=new mysqli("localhost", "root", "", "cursos");
+        $cursos = $conector->query("SELECT id,titulo FROM curso");
+        foreach($cursos as $curso){
+    ?>
+            <a href="detalle.php?id=<?=$curso["id"]?>"><?=$curso["titulo"]?></a>
+    <?php
+        }
     ?>
 </body>
 </html>

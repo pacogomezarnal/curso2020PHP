@@ -12,7 +12,11 @@ function getCursos($conector){
     return $resultado;
 }
 function getCurso($conector,$id){
-    $resultado = $conector->query("SELECT * FROM curso WHERE id=$id");
+    $resultadoObj = $conector->query("SELECT * FROM curso WHERE id=$id");
+    if($resultadoObj ==false){
+        header('Location: index.php?msg=noId');
+    }
+    $resultado=$resultadoObj->fetch_assoc();
     return $resultado;
 }
 /*
