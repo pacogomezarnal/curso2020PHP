@@ -1,3 +1,8 @@
+<?php
+    require_once "./lib/db.php";
+    $conn=conexion();
+    $cursos=getCursos($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +13,7 @@
 <body>
     <?php
         var_dump($_POST);
+        nuevoCurso($conn,$_POST['titulo'],$_POST['descripcion']);
     ?>
 </body>
 </html>
