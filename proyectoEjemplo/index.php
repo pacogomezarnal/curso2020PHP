@@ -1,7 +1,7 @@
 <?php
     require_once "./lib/db.php";
     $conn=conexion();
-    getCursos($conn);
+    $cursos=getCursos($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">

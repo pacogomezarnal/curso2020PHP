@@ -8,6 +8,8 @@ Funcion que devuelve un mysqli_result con todos los cursos
 Si existe error devuelve FALSE
 */
 function getCursos($conector){
+    $resultado = $conector->query("SELECT id,titulo FROM curso");
+    return $resultado;
 }
 /*
 Funcion que devuelve un mysqli_result con titulo de curso y nombre de especialidad
