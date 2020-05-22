@@ -13,16 +13,30 @@
     <title>Proyecto ejemplo</title>
 </head>
 <body>
-    <h1>Listado de cursos</h1>
-    <ul>
-    <?php
-        foreach ($cursos as $curso){
-            ?>
-                <a href="detalle.php?id=<?=$curso["id"]?>"><li><?=$curso["titulo"]?></li></a>
+    <?php include "./template/head.php"?>
+    <div class="container">
+        <h1>Listado de cursos</h1>
+        <div class="row">
             <?php
-        } 
-    ?>
-    </ul>
+                foreach ($cursos as $curso){
+                    ?>
+                    <div class="col s4 m6">
+                        <div class="card blue-grey darken-1">;
+                            <div class="card-content white-text">
+                                <span class="card-title"><?=$curso["titulo"]?></span>
+                                <p>I am a very simple card. I am good at containing small bits of information.
+                                I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="detalle.php?id=<?=$curso["id"]?>">Detalle del curso</a>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                } 
+            ?>
+        </div>
+    </div>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </body>
