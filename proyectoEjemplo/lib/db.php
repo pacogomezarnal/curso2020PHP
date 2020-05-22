@@ -11,6 +11,10 @@ function getCursos($conector){
     $resultado = $conector->query("SELECT id,titulo FROM curso");
     return $resultado;
 }
+function getEspecialidades($conector){
+    $resultado = $conector->query("SELECT id,nombre FROM especialidad");
+    return $resultado;
+}
 function getCurso($conector,$id){
     $resultadoObj = $conector->query("SELECT * FROM curso WHERE id=$id");
     if($resultadoObj ==false){
