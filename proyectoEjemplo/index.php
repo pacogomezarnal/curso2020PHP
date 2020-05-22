@@ -18,7 +18,7 @@
     <?php
         foreach ($cursos as $curso){
             ?>
-                <li><?=$curso["titulo"]?></li>
+                <a href="detalle.php?id=<?=$curso["id"]?>"><li><?=$curso["titulo"]?></li></a>
             <?php
         } 
     ?>
