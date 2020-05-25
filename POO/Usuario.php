@@ -2,6 +2,9 @@
 
 class Usuario{//Estoy es this
 
+    //Constante
+    const NOMBRE_DEF="PEPE";
+
     //Propiedades o variables
     public $nombre="Paco";
     private $dni="22453079W";
@@ -10,26 +13,26 @@ class Usuario{//Estoy es this
     //Método constructor
     public function __construct(){
         echo "Creado nuevo objeto Usuario";
-
+        echo "<br>----------------<br>";
     }
 
     //Métodos o funciones
-    function mostrarNombre(){
+    public function mostrarNombre(){
         return $this->anyadirBr($this->nombre);
     }
 
-    function mostrarDni(){
+    public function mostrarDni(){
         return $this->dni . "<br>";
     }
-    function modificarDni($nuevoValor){
+    public function modificarDni($nuevoValor){
         $this->dni=$nuevoValor;
     }
 
-    function mostrarEdad(){
+    public function mostrarEdad(){
         return $this->edad . "<br>";
     }
 
-    function modificarEdad($nuevaEdad){
+    public function modificarEdad($nuevaEdad){
         if($nuevaEdad<0){
             $this->edad=0;
         }else{

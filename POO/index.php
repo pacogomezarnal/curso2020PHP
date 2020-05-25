@@ -3,6 +3,7 @@
 
     //Generamos un nuevo objeto
     $usuario=new Usuario();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -13,6 +14,8 @@
 </head>
 <body>
     <?php
+    //Mostrar la constante
+    echo $usuario::NOMBRE_DEF;
     //Estamos utilizando una propiedad
     echo $usuario->mostrarNombre();
     $usuario->nombre="Lucia";
@@ -25,8 +28,6 @@
     //Estamos utilizando u metodo
     $usuario->mostrarNombre();
     //$this->...  Me envía a mi correo de Paco un mensaje con vuestra dirección, y yo voy con un lanzallamas 
-
-
     //Edad
     echo "Edad del usuario: ".$usuario->mostrarEdad();
     $usuario->modificarEdad(25);
