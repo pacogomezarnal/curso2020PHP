@@ -33,7 +33,7 @@ function getCursosConEspecialidad($conector){
     especialidad ON curso.id_especialidad = especialidad.id;");
     return $resultado;
 }
-function nuevoCurso($conector,$titulo,$descripcion){
+function nuevoCurso($conector,$titulo,$descripcion,$idEspecialidad){
     $consulta="INSERT INTO `curso` (`id`, `titulo`, `fecha_ini`, `id_especialidad`, `descripcion`) VALUES (NULL, '$titulo', '2020-05-22', '1', '$descripcion')";
     $resultado = $conector->query($consulta);
 }

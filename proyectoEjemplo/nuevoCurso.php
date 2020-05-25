@@ -1,7 +1,7 @@
 <?php
     require_once "./lib/db.php";
     $conn=conexion();
-    $cursos=getEspecialidades($conn);
+    $especialidades=getEspecialidades($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,14 +29,16 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select>
-                
-                <option value="" disabled selected>Elige especialidad</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
+                <select name="id_especialidad">
+                <?php
+                foreach($especialidades as $especialidad){
+                ?>
+                <option value="<?=$especialidad["id"]?>"><?=$especialidad["nombre"]?></option>
+                <?php
+                }
+                ?>
                 </select>
-                <label>Materialize Select</label>
+                <label>Especialidades</label>
             </div>
         </div>
         <div class="row">

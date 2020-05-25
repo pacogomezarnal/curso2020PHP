@@ -13,7 +13,7 @@
 <body>
     <?php
         var_dump($_POST);
-        nuevoCurso($conn,$_POST['titulo'],$_POST['descripcion']);
+        nuevoCurso($conn,$_POST['titulo'],$_POST['descripcion'],$_POST['id_especialidad']);
     ?>
 </body>
 </html>
