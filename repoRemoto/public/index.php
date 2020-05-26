@@ -1,18 +1,38 @@
 <?php
-require_once __DIR__.'/../vendor/autoload.php';
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
 
-use Geeks\Model\DB;
+require __DIR__ . '/../vendor/autoload.php';
 
-$baseDatos=new DB();
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Mi primera aplicación con composer
-</body>
-</html>
+use Geeks\Model\DB; //require "../src/Model/DB.php";
+
+//Añadir un unico container para toda la aplicación
+//$container= new DI\Container();
+//AppFactory::setContainer($container);
+$app = AppFactory::create();
+
+$app->get('/', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Hello world!");
+    return $response;
+});
+$app->get('/articulos/{id}', function (Request $request, Response $response, $args) {
+    $id=$request->getAttribute('id');
+    $articulos=["id"=>$id];
+    $data=json_encode($articulos);
+    $response->getBody()->write($data);
+    return $response
+    ->withHeader('Content-Type', 'application/json');
+});
+
+$app->get('/articulos', function (Request $request, Response $response, $args) {
+    $db=new DB();
+    $data=json_encode($db->getCursos());
+    $response->getBody()->write($data);
+    return $response
+    ->withHeader('Content-Type', 'application/json');
+});
+
+//$app->get('/contactar', 'Geeks\Controller\HomeController:contactar');
+
+$app->run();
